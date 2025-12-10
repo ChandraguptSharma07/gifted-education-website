@@ -1,0 +1,377 @@
+/* --- Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap');
+
+/* --- Global Styles --- */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #f1c40f;
+    --background-color: #f8f9fa;
+    --text-color: #34495e;
+    --light-gray: #ecf0f1;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.8;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* --- Header --- */
+header {
+    background: var(--white);
+    padding: 1.5rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+header .logo h1 a {
+    color: var(--primary-color);
+}
+
+header nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin-left: 30px;
+}
+
+header nav ul li a {
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+}
+
+header nav ul li a:hover {
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+/* --- Hero Section --- */
+#hero {
+    background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://www.transparenttextures.com/patterns/cubes.png');
+    color: var(--white);
+    padding: 6rem 0;
+    text-align: center;
+}
+
+#hero h2 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--white);
+}
+
+#hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.btn:hover {
+    background: var(--white);
+    color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* --- Sections --- */
+section {
+    padding: 5rem 0;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: var(--secondary-color);
+}
+
+/* --- About, Membership, Contact --- */
+#about .container,
+#membership .container,
+#contact .container {
+    max-width: 900px;
+}
+
+/* --- Resources Section --- */
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    text-align: left;
+}
+
+.resource-item {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.resource-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.resource-item h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+/* --- FAQ Section --- */
+#faqs .container {
+    max-width: 900px;
+}
+
+.faq {
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+}
+
+.faq-question {
+    background: transparent;
+    border: none;
+    width: 100%;
+    text-align: left;
+    padding: 2rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: var(--primary-color);
+}
+
+.faq-question::after {
+    content: '+';
+    font-size: 2rem;
+    color: var(--secondary-color);
+    transition: transform 0.3s ease;
+}
+
+.faq.active .faq-question::after {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.faq-answer p {
+    padding: 0 2rem 2rem;
+    margin: 0;
+}
+
+/* --- NEP 2020 Section --- */
+#nep2020 .container {
+    max-width: 1200px;
+}
+
+#nep2020 p {
+    font-size: 1.1rem;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+}
+
+#nep2020 ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+@media (min-width: 768px) {
+    #nep2020 ul {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+#nep2020 li {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    border: 2px solid var(--light-gray);
+}
+
+#nep2020 li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    border-color: var(--secondary-color);
+}
+
+#nep2020 li strong {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+/* --- Contact Page --- */
+#contact-page .container {
+    max-width: 1200px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 50px;
+}
+
+@media (min-width: 992px) {
+    .contact-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.contact-form h2,
+.contact-info h2 {
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid var(--light-gray);
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.map {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* --- Contact Section --- */
+#contact {
+    background-color: var(--light-gray);
+}
+
+#contact p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 2rem auto;
+}
+
+/* --- Footer --- */
+footer {
+    background: var(--primary-color);
+    color: var(--light-gray);
+    padding: 2rem 0;
+    text-align: center;
+}
+.article {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin-bottom: 2rem;
+}
